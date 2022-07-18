@@ -1,0 +1,30 @@
+{
+  "BUTTON": {},
+  "TITLE": {
+    "AINA": "AINA",
+    "NEW_ARRIVALS": "NEW ARRIVALS",
+    "OCCASIONS": "OCCASIONS",
+    "S4U_EXCLUSIVE": "S4U EXCLUSIVE",
+    "TRENDING_NOW": "TRENDING NOW",
+    "READY_TO_SHIP": "READY TO SHIP",
+    "SUMMER_ESSENTIALS": "SUMMER ESSENTIALS",
+    "CONTACT_US": "Contact Us",
+    "INFORMATION": "Information",
+    "HELP": "Help",
+    "KEEP_IN_TOUCH": "KEEP IN TOUCH",
+    "CHOOSE_LANG": "Choose Lang",
+    "CHOOSE_LANG_LINK": {
+      "ENGLISH": "English",
+      "FRENCH": "French"
+    }
+  },
+
+  "FOOTER_LABEL": {
+    "PRIVACY_POLICY": "Privacy Policy",
+    "TERMS_AND_CONDITIONS": "Terms & Conditions",
+    "SHIPPING_POLICY": "Shipping Policy",
+    "RETURN_AND_EXCHANGE": "Return & Exchange",
+    "HOME": "Home",
+    "ABOUT_US": "About Us"
+  }
+}
