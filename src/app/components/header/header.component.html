@@ -1,0 +1,70 @@
+<!-- <mat-toolbar color="white">
+    <mat-toolbar-row>
+        <button *ngIf="screenWidth < 544 && screenHeight > 480" mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <h1 [routerLink]="'/home'" routerLinkActive="active">AINA</h1>
+        <span class="fill-remaining-space"></span>
+        <div *ngIf="screenWidth > 544 && screenHeight > 480">
+            <a mat-button [routerLink]="'/accounts'" routerLinkActive="active"> NEW ARRIVALS </a>
+            <a mat-button [routerLink]="'/create-account'" routerLinkActive="active"> OCCASIONS </a>
+            <a mat-button [routerLink]="'/contacts'" routerLinkActive="active"> S4U EXCLUSIVE </a>
+            <a mat-button [routerLink]="'/create-contact'" routerLinkActive="active"> TRENDING NOW </a>
+            <a mat-button [routerLink]="'/activities'" routerLinkActive="active"> READY TO SHIP </a>
+            <a mat-button [routerLink]="'/create-activity'" routerLinkActive="active"> SUMMER ESSENTIALS </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list style="height: 88vh; width: 220px;">
+            <a mat-list-item> NEW ARRIVALS </a>
+            <a mat-list-item> OCCASIONS </a>
+            <a mat-list-item> S4U EXCLUSIVE </a>
+            <a mat-list-item> TRENDING NOW </a>
+            <a mat-list-item> READY TO SHIP </a>
+            <a mat-list-item> SUMMER ESSENTIALS </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh">
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<div style="height: '{{ constant.webHeight }}'">
+    <mat-toolbar color="white">
+        <div mat-icon-button fxShow="true" fxHide.gt-sm="true">
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </div>
+        <h1 [routerLink]="'/home'" routerLinkActive="active">{{ 'TITLE.AINA' | translate }}</h1>
+
+        <span class="fill-remaining-space"></span>
+
+        <div fxShow="true" fxHide.lt-md="true">
+            <a mat-button>{{ 'TITLE.NEW_ARRIVALS' | translate }}</a>
+            <a mat-button>{{ 'TITLE.OCCASIONS' | translate }}</a>
+            <a mat-button>{{ 'TITLE.S4U_EXCLUSIVE' | translate }}</a>
+            <a mat-button>{{ 'TITLE.TRENDING_NOW' | translate }}</a>
+            <a mat-button>{{ 'TITLE.READY_TO_SHIP' | translate }}</a>
+            <a mat-button>{{ 'TITLE.SUMMER_ESSENTIALS' | translate }}</a>
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container fxFlexFill class="example-container">
+        <mat-sidenav #sidenav fxLayout="column">
+            <div fxLayout="column">
+                <a mat-button>{{ 'TITLE.NEW_ARRIVALS' | translate }}</a>
+                <a mat-button>{{ 'TITLE.OCCASIONS' | translate }}</a>
+                <a mat-button>{{ 'TITLE.S4U_EXCLUSIVE' | translate }}</a>
+                <a mat-button>{{ 'TITLE.TRENDING_NOW' | translate }}</a>
+                <a mat-button>{{ 'TITLE.READY_TO_SHIP' | translate }}</a>
+                <a mat-button>{{ 'TITLE.SUMMER_ESSENTIALS' | translate }}</a>
+            </div>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+            <ng-content></ng-content>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
