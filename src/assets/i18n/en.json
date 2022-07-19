@@ -1,5 +1,7 @@
 {
-  "BUTTON": {},
+  "BUTTON": {
+    "VIEW_ALL": "VIEW ALL"
+  },
   "TITLE": {
     "AINA": "AINA",
     "NEW_ARRIVALS": "NEW ARRIVALS",
