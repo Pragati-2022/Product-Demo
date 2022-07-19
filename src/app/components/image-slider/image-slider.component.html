@@ -1,19 +1,6 @@
-<!-- <div class="container">
-    <div class="row">
-        <ngb-carousel>
-            <ng-template ngbSlide *ngFor="let img of images">
-                <img [src]="img">
-            </ng-template>
-        </ngb-carousel>
-    </div>
-</div> -->
-
-<!-- <ng-image-slider #nav [images]="images" [imagePopup]="false" [infinite]="false" [autoSlide]="1"
-    [imageSize]="{width: '100%', height: 1000}" slideImage="1"></ng-image-slider> -->
-
-<div
-    style="width: '(( constant.imgWidth ))'; height: '(( constant.imgWidth ))'; text-align:center;margin:0; padding:0;">
-    <ng-image-slider #nav [images]="images" [imagePopup]="false" [infinite]="false" [autoSlide]="1"
-        [imageSize]="{width: constant.imgWidth, height:constant.imgHeight}" slideImage="1">
-    </ng-image-slider>
-</div>
+<swiper [config]="constant.config" class="mySwiper">
+    <ng-template swiperSlide *ngFor="let img of images"><img
+            [ngStyle]="{ 'width' : constant.imgWidth, 'height' : constant.imgHeight }" [src]="img.image" alt="">
+    </ng-template>
+</swiper>
+<app-new-arrivals></app-new-arrivals>
