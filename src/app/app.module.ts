@@ -18,6 +18,9 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { SwiperModule } from 'swiper/angular';
+import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
+import {MatCardModule} from '@angular/material/card'; 
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -28,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HeaderComponent,
     FooterComponent,
     ImageSliderComponent,
+    NewArrivalsComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient],
       },
     }),
+    SwiperModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
