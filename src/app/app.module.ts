@@ -13,16 +13,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { FooterComponent } from './components/footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ImageSliderComponent } from './pages/home/image-slider/image-slider.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { SwiperModule } from 'swiper/angular';
-import { NewArrivalsComponent } from './components/new-arrivals/new-arrivals.component';
+import { NewArrivalsComponent } from './pages/home/new-arrivals/new-arrivals.component';
 import {MatCardModule} from '@angular/material/card';
-import { OccasionsComponent } from './components/occasions/occasions.component'; 
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import { OccasionsComponent } from './pages/home/occasions/occasions.component'; 
+import {MatGridListModule} from '@angular/material/grid-list';
+import { HomeComponent } from './pages/home/home.component';
+import { CategoryComponent } from './pages/home/category/category.component';
+import { ReadyToShipComponent } from './pages/home/ready-to-ship/ready-to-ship.component';
+import { GridListComponent } from './components/common/grid-list/grid-list.component';
+import { TrendingComponent } from './pages/home/trending/trending.component';
+import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component'; 
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -34,7 +40,13 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FooterComponent,
     ImageSliderComponent,
     NewArrivalsComponent,
-    OccasionsComponent
+    OccasionsComponent,
+    HomeComponent,
+    CategoryComponent,
+    ReadyToShipComponent,
+    GridListComponent,
+    TrendingComponent,
+    BestSellersComponent
   ],
   imports: [
     BrowserModule,
