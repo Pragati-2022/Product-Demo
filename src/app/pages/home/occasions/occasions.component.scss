@@ -1,0 +1,40 @@
+.title {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 26px;
+}
+
+.mat-grid-list {
+  padding-bottom: calc(150% - 150px) !important;
+  margin: 0px 16px;
+
+  .grid-title-50 {
+    margin-top: calc(50% - 60.5px) !important;
+  }
+  .grid-title-115 {
+    margin-top: calc(100% - 115.5px) !important;
+  }
+  .mat-card {
+    margin: 0px 20px;
+
+    .mat-card-content {
+      .mat-card-actions {
+        .mat-card-subtitle {
+          font-size: 20px;
+          margin-top: 8px;
+          margin-bottom: 0%;
+          text-align: center;
+          color: var(--color-lightBlack);
+        }
+        .mat-stroked-button {
+          font-size: 13px;
+          color: var(--color-black);
+          text-align: center;
+          padding: 4px 25px;
+          font-weight: lighter;
+          border-color: var(--color-lightBlack);
+        }
+      }
+    }
+  }
+}
