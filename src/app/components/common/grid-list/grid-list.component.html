@@ -1,0 +1,11 @@
+<mat-grid-list [cols]="cols" [rowHeight]="rowHeight">
+    <mat-grid-tile *ngFor="let product of products;let i=index"
+        [ngClass]="i <= 3 ? 'grid-title-50' :  i > 3 ? 'grid-title-40' : ''">
+        <mat-card>
+            <img mat-card-image [src]="product?.image" alt="">
+            <mat-card-content *ngIf="product?.name">
+                <mat-card-subtitle>{{ product?.name | uppercase }}</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
