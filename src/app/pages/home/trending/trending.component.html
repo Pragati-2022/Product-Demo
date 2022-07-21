@@ -1,3 +1,14 @@
-<h3 class="title">{{ 'TITLE.TRENDING_NOW' | translate }}</h3>
+<div fxLayoutAlign="center" class="container title">
+    <div>{{ 'TITLE.TRENDING_NOW' | translate }}</div>
+</div>
 
-<app-grid-list [products]="categories" [rowHeight]="'1:2'" [cols]="4"></app-grid-list>
+<div class="container" fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="10px">
+    <div class="category-card" *ngFor="let category of categories" fxFlex="45" fxFlex.md="23" fxFlex.lg="23"
+        fxFlex.xl="23" fxFlex.xs="90">
+        <mat-card>
+            <img mat-card-image [src]="category.image" alt="">
+        </mat-card>
+    </div>
+</div>
+
+<!-- <app-grid-list [products]="categories" [rowHeight]="'1:2'" [cols]="4"></app-grid-list> -->

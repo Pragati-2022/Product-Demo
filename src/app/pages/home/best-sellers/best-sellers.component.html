@@ -1,10 +1,13 @@
-<h3 class="title">{{ 'TITLE.BEST_SELLERS' | translate }}</h3>
+<div fxLayoutAlign="center" class="container title">
+    <div>{{ 'TITLE.BEST_SELLERS' | translate }}</div>
+</div>
 
 <swiper [config]="constant.bestSellersConfig" class="mySwiper">
     <ng-template swiperSlide *ngFor="let seller of sellers">
         <div fxLayout="row">
-            <div class="sellerData" fxFlexOffset.xl="20" fxFlex.xl="60" fxFlexOffset.lg="25" fxFlex.lg="50" fxFlexOffset.md="15"
-                fxFlex.md="70" fxFlexOffset.xs="10" fxFlex.xs="80" fxFlexOffset.sm="10" fxFlex.sm="80">
+            <div class="sellerData" fxFlexOffset.xl="20" fxFlex.xl="60" fxFlexOffset.lg="25" fxFlex.lg="50"
+                fxFlexOffset.md="15" fxFlex.md="70" fxFlexOffset.xs="10" fxFlex.xs="80" fxFlexOffset.sm="10"
+                fxFlex.sm="80">
                 <p>
                     {{ seller.description }}
                 </p>
