@@ -28,6 +28,7 @@
   }
   .mat-card-header {
     color: var(--color-lightBlack);
+    font-size: 2vw;
 
     .example-header-image-share {
       position: relative;
@@ -43,24 +44,11 @@
   }
 }
 
-// .title {
-//   padding-top: 50px;
-//   text-align: center;
-//   font-size: 26px;
-// }
-
-.container{
-  font-size: 3vw;
-  .view-all-button{
-    font-size: 3vw;
+.container {
+  margin-top: 2vh;
+  font-size: 3vh;
+  .view-all-button {
+    font-size: 3vh;
+    padding: 1vw;
   }
 }
-// .button {
-//   text-align: center;
-
-//   .mat-stroked-button {
-//     padding: 4px 25px;
-//     font-size: 15px;
-//     font-weight: lighter;
-//   }
-// }

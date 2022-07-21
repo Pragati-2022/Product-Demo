@@ -1,27 +1,28 @@
-<div fxLayout="column" class="container" fxLayoutGap="10px">
+<div fxLayout="column" class="container" fxLayoutGap="2vw">
     <div fxLayoutAlign="center" class="item item-1">{{ 'TITLE.NEW_ARRIVALS' | translate }}</div>
     <div fxLayoutAlign="center" class="item item-2">
         <button mat-stroked-button class="view-all-button">{{ 'BUTTON.VIEW_ALL' | translate }}</button>
     </div>
 </div>
+
 <swiper [config]="constant.newArrivalsconfig" class="mySwiper">
     <ng-template swiperSlide *ngFor="let img of images">
         <mat-card>
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image">
+            <mat-card-header fxLayout="row" fxLayoutAlign="end">
+                <div class="example-header-image">
                     <mat-icon>favorite_border</mat-icon>
                 </div>
                 <!-- <div mat-card-avatar class="example-header-image">
                     <mat-icon>favorite</mat-icon>
                 </div> -->
-                <div mat-card-avatar class="example-header-image-share">
+                <div class="example-header-image-share">
                     <mat-icon>share</mat-icon>
                     <div class="onHover">
                         <mat-icon>whatsapp</mat-icon>
                         <mat-icon>facebook</mat-icon>
                     </div>
                 </div>
-                <div mat-card-avatar class="example-header-image">
+                <div class="example-header-image">
                     <mat-icon>pageview</mat-icon>
                 </div>
             </mat-card-header>
