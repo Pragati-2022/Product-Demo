@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-occasions',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./occasions.component.scss'],
 })
 export class OccasionsComponent implements OnInit {
+  cols = 2;
+
   occasions = [
     {
       name: 'Haldi And Mehndi',
@@ -41,4 +43,22 @@ export class OccasionsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    if (window.innerWidth < 768) {
+      this.cols = 1;
+    } else {
+      this.cols = 2;
+    }
+  }
+
+  @HostListener('window:load', ['$event'])
+  onLoad(event: any) {
+    if (window.innerWidth < 768) {
+      this.cols = 1;
+    } else {
+      this.cols = 2;
+    }
+  }
 }
