@@ -1,7 +1,11 @@
-<h3 class="title">{{ 'TITLE.READY_TO_SHIP' | translate }}</h3>
+<div fxLayoutAlign="center" class="container title">
+    <div>{{ 'TITLE.READY_TO_SHIP' | translate }}</div>
+</div>
 
-
-<!-- <mat-card>
-    <img mat-card-image src="https://cdn.ainabys4u.com/cms/f063812808544ef08886ee14b06123fa.jpg" alt="">
-</mat-card> -->
-<app-grid-list class="gridList" [products]="products" [rowHeight]="'1:1'" [cols]="0"></app-grid-list>
+<div class="container" fxLayoutAlign="space-around">
+    <div class="ready-to-ship-card" *ngFor="let product of products" fxFlex="100">
+        <mat-card>
+            <img mat-card-image [src]="product.image" alt="">
+        </mat-card>
+    </div>
+</div>
