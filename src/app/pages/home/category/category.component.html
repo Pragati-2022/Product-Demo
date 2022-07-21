@@ -1,5 +1,6 @@
-<h3 class="title">{{ 'TITLE.SHOP_BY_CATEGORY' | translate }}</h3>
-
+<div fxLayoutAlign="center" class="container title">
+    <div>{{ 'TITLE.SHOP_BY_CATEGORY' | translate }}</div>
+</div>
 <!-- <mat-grid-list cols="4" rowHeight="1:2">
     <mat-grid-tile *ngFor="let category of categories;let i=index"
         [ngClass]="i <= 3 ? 'grid-title-50' :  i > 3 ? 'grid-title-40' : ''">
@@ -12,4 +13,16 @@
     </mat-grid-tile>
 </mat-grid-list> -->
 
-<app-grid-list [products]="categories" [rowHeight]="'1:2'" [cols]="4"></app-grid-list>
+<!-- <app-grid-list [products]="categories" [rowHeight]="'1:2'" [cols]="4"></app-grid-list> -->
+
+<div class="container" fxLayoutAlign="center" fxLayout="row wrap" fxLayoutGap="10px">
+    <div class="category-card" *ngFor="let category of categories" fxFlex="45" fxFlex.md="23" fxFlex.lg="23"
+        fxFlex.xl="23" fxFlex.xs="90">
+        <mat-card>
+            <img mat-card-image [src]="category.image" alt="">
+            <mat-card-content>
+                <mat-card-subtitle>{{ category.name | uppercase }}</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
