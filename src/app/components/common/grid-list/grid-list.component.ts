@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-grid-list',
@@ -13,5 +13,17 @@ export class GridListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+
+    if(window.innerWidth < 768){
+      console.log(this.cols);
+      
+      this.cols = 1;
+      console.log(this.cols);
+      
+    }
   }
 }
