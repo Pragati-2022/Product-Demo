@@ -1,37 +1,32 @@
 <footer class="app-footer">
-  <div class="app-footer-link">
-    <div class="firstrow">
+  <div fxLayout.xs="row wrap" fxLayout="row" class="footer-row">
+    <div fxLayout="column" fxFlex="50">
       <div class="headingcolumn">{{ 'TITLE.CONTACT_US' | translate }}</div>
-      <div class="headingcolumn">{{ 'TITLE.INFORMATION' | translate }}</div>
-      <div class="headingcolumn">{{ 'TITLE.HELP' | translate }}</div>
-      <div class="headingcolumn">{{ 'TITLE.KEEP_IN_TOUCH' | translate }}</div>
+      <div class="child-1">customercare@ainabys4u.com</div>
+      <div class="child-2">+91 6351043430</div>
+      <div class="child-3"></div>
     </div>
-    <div class="row">
-      <div class="column">customercare@ainabys4u.com</div>
-      <div class="column">{{ 'FOOTER_LABEL.PRIVACY_POLICY' | translate }}</div>
-      <div class="column">{{ 'FOOTER_LABEL.HOME' | translate }}</div>
-      <div class="column">
+    <div fxLayout="column" fxFlex="50">
+      <div class="headingcolumn">{{ 'TITLE.INFORMATION' | translate }}</div>
+      <div class="child-1">{{ 'FOOTER_LABEL.PRIVACY_POLICY' | translate }}</div>
+      <div class="child-2">{{ 'FOOTER_LABEL.TERMS_AND_CONDITIONS' | translate }}</div>
+      <div class="child-3">{{ 'FOOTER_LABEL.SHIPPING_POLICY' | translate }}</div>
+      <div class="child-3">{{ 'FOOTER_LABEL.RETURN_AND_EXCHANGE' | translate }}</div>
+    </div>
+    <div fxLayout="column" fxFlex="50">
+      <div class="headingcolumn">{{ 'TITLE.HELP' | translate }}</div>
+      <div class="child-1">{{ 'FOOTER_LABEL.HOME' | translate }}</div>
+      <div class="child-2">{{ 'TITLE.CONTACT_US' | translate }}</div>
+      <div class="child-3">{{ 'FOOTER_LABEL.ABOUT_US' | translate }}</div>
+    </div>
+    <div fxLayout="column" fxFlex="50">
+      <div class="headingcolumn">{{ 'TITLE.KEEP_IN_TOUCH' | translate }}</div>
+      <div class="child-1">
         <mat-icon aria-hidden="false" aria-label="Example facebook icon">facebook</mat-icon>
         <mat-icon aria-hidden="false" aria-label="Example whatsapp icon">whatsapp</mat-icon>
       </div>
-    </div>
-    <div class="row">
-      <div class="column">+91 6351043430</div>
-      <div class="column">{{ 'FOOTER_LABEL.TERMS_AND_CONDITIONS' | translate }}</div>
-      <div class="column">{{ 'TITLE.CONTACT_US' | translate }}</div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column"></div>
-      <div class="column">{{ 'FOOTER_LABEL.SHIPPING_POLICY' | translate }}</div>
-      <div class="column">{{ 'FOOTER_LABEL.ABOUT_US' | translate }}</div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column"></div>
-      <div class="column">{{ 'FOOTER_LABEL.RETURN_AND_EXCHANGE' | translate }}</div>
-      <div class="column"></div>
-      <div class="column"></div>
+      <div class="child-2"></div>
+      <div class="child-3"></div>
     </div>
   </div>
 </footer>

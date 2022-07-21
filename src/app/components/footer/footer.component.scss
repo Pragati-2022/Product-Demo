@@ -3,34 +3,41 @@
   color: var(--color-white);
   text-align: center;
   vertical-align: middle;
-  height: 150px;
-  bottom: 0;
+  bottom: 0%;
 
-  .app-footer-link {
-    line-height: 1.5em;
-    p {
-      margin: 0;
-    }
+  .footer-row {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
 
-    .firstrow {
-      display: flex;
-      padding-top: 20px;
-
-      .headingcolumn {
-        @extend .flex-float;
-        font-size: 18px;
-      }
-    }
-
-    .row {
-      display: flex;
-
-      .column {
-        @extend .flex-float;
-        font-size: 12px;
-      }
+    .headingcolumn {
+      font-size: 4vh;
     }
   }
+  // .app-footer-link {
+  //   line-height: 1.5em;
+  //   p {
+  //     margin: 0;
+  //   }
+
+  //   .firstrow {
+  //     display: flex;
+  //     padding-top: 20px;
+
+  //     .headingcolumn {
+  //       @extend .flex-float;
+  //       font-size: 18px;
+  //     }
+  //   }
+
+  //   .row {
+  //     display: flex;
+
+  //     .column {
+  //       @extend .flex-float;
+  //       font-size: 12px;
+  //     }
+  //   }
+  // }
 }
 
 .flex-float {
