@@ -1,0 +1,15 @@
+<h3 class="title">{{ 'TITLE.SHOP_BY_CATEGORY' | translate }}</h3>
+
+<!-- <mat-grid-list cols="4" rowHeight="1:2">
+    <mat-grid-tile *ngFor="let category of categories;let i=index"
+        [ngClass]="i <= 3 ? 'grid-title-50' :  i > 3 ? 'grid-title-40' : ''">
+        <mat-card>
+            <img mat-card-image [src]="category.image" alt="">
+            <mat-card-content>
+                <mat-card-subtitle>{{ category.name | uppercase }}</mat-card-subtitle>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list> -->
+
+<app-grid-list [products]="categories" [rowHeight]="'1:2'" [cols]="4"></app-grid-list>
