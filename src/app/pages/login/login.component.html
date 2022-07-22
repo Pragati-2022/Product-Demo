@@ -1,0 +1,55 @@
+<div class="dialog">
+    <div fxLayoutAlign="end center">
+        <mat-icon mat-dialog-close>close</mat-icon>
+    </div>
+    <mat-dialog-content class="dialog-content" fxLayoutAlign.lt-sm="center center">
+        <div fxLayoutAlign="center" class="container title">
+            <div>{{ 'TITLE.LOGIN_OR_SIGNUP' | translate }}</div>
+        </div>
+        <div>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="dialog-form">
+                <div class="example-container">
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="{{ 'LABEL.EMAIL' | translate }}" formControlName="email">
+                            <mat-error
+                                *ngIf="!_loginForm['email']?.errors?.['required'] && _loginForm['email']?.errors?.['email']">
+                                {{ 'LABEL.EMAIL' | translate }} {{ 'MESSAGE.EMAIL' | translate }}
+                            </mat-error>
+                            <mat-error
+                                *ngIf="_loginForm['email']?.invalid && (_loginForm['email']?.dirty || _loginForm['email']?.touched) && _loginForm['email']?.errors?.['required']">
+                                {{ 'LABEL.EMAIL' | translate }} {{ 'MESSAGE.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput type="password" placeholder="{{ 'LABEL.PASSWORD' | translate }}" formControlName="password">
+                            <mat-error
+                                *ngIf="_loginForm['password']?.invalid && (_loginForm['password']?.dirty || _loginForm['password']?.touched) &&_loginForm['password']?.errors?.['required']">
+                                {{ 'LABEL.PASSWORD' | translate }} {{ 'MESSAGE.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="NotFoundUser">
+                        <mat-form-field>
+                            <input matInput placeholder="{{ 'LABEL.CONFIRM_PASSWORD' | translate }}" formControlName="confirmPassword"
+                                [errorStateMatcher]="confirmValidParentMatcher">
+                            <mat-error>
+                                {{ 'LABEL.CONFIRM_PASSWORD' | translate }} {{ 'MESSAGE.MATCH_PASSWORD' | translate }} 
+                            </mat-error>
+                        </mat-form-field>
+                        <!-- <mat-error
+                            *ngIf="signUpForm.errors?.['passwordMatch'] && _signUpForm['confirmPassword'].valid && _signUpForm['confirmPassword'].touched">
+                            Confirm password is not match
+                        </mat-error> -->
+                    </div>
+                    <div>
+                        <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>{{
+                            (!NotFoundUser ? 'BUTTON.LOGIN' : 'BUTTON.SIGNUP') | translate }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+</div>
