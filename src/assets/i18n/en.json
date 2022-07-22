@@ -1,10 +1,14 @@
 {
   "BUTTON": {
     "VIEW_ALL": "VIEW ALL",
-    "SHOP_NOW": "SHOP NOW"
+    "SHOP_NOW": "SHOP NOW",
+    "LOGIN": "LOGIN",
+    "SIGNUP": "SIGNUP"
   },
   "TITLE": {
     "AINA": "AINA",
+    "LOGIN": "LOGIN",
+    "LOGIN_OR_SIGNUP": "LOGIN OR SIGNUP",
     "NEW_ARRIVALS": "NEW ARRIVALS",
     "OCCASIONS": "OCCASIONS",
     "S4U_EXCLUSIVE": "S4U EXCLUSIVE",
@@ -24,6 +28,17 @@
       "ENGLISH": "English",
       "FRENCH": "French"
     }
+  },
+
+  "LABEL": {
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password"
+  },
+  "MESSAGE": {
+    "REQUIRED": "is required !",
+    "EMAIL": "is invalid !",
+    "MATCH_PASSWORD": "is not match!"
   },
 
   "FOOTER_LABEL": {
