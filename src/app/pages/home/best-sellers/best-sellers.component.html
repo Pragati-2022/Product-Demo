@@ -16,3 +16,13 @@
         </div>
     </ng-template>
 </swiper>
+
+<div class="swiper2-div">
+    <swiper class="swiper2" [config]="constant.newArrivalsconfig" class="mySwiper">
+        <ng-template swiperSlide *ngFor="let img of images">
+            <mat-card>
+                <img mat-card-image [src]="img.image" alt="">
+            </mat-card>
+        </ng-template>
+    </swiper>
+</div>
