@@ -29,6 +29,10 @@ import { ReadyToShipComponent } from './pages/home/ready-to-ship/ready-to-ship.c
 import { GridListComponent } from './components/common/grid-list/grid-list.component';
 import { TrendingComponent } from './pages/home/trending/trending.component';
 import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component'; 
+import {MatDialogModule} from '@angular/material/dialog';
+import { LoginComponent } from './pages/login/login.component';
+import { MatInputModule } from '@angular/material/input';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -46,7 +50,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     ReadyToShipComponent,
     GridListComponent,
     TrendingComponent,
-    BestSellersComponent
+    BestSellersComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +79,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     }),
     SwiperModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],
