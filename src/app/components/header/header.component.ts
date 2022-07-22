@@ -1,12 +1,8 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { ConstantsClass } from 'src/app/constants/constants';
+import { LoginComponent } from 'src/app/pages/login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -18,8 +14,9 @@ export class HeaderComponent implements OnInit {
   public screenWidth: any;
   public screenHeight: any;
   public constant;
-  constructor(private translate: TranslateService) { 
-    this.constant = ConstantsClass
+
+  constructor(private translate: TranslateService, public dialog: MatDialog) {
+    this.constant = ConstantsClass;
   }
 
   ngOnInit() {
@@ -31,5 +28,19 @@ export class HeaderComponent implements OnInit {
   onResize(event: any) {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(LoginComponent, {
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      height: '50%',
+      width:
+        this.screenWidth < 450
+          ? '75%'
+          : this.screenWidth > 450 && this.screenWidth < 800
+          ? '400px'
+          : '500px',
+    });
   }
 }
