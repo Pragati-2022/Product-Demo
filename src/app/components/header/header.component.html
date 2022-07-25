@@ -7,27 +7,36 @@
 
         <span class="fill-remaining-space"></span>
 
-        <div fxShow="true" fxHide.lt-md="true">
+        <div fxShow="true" fxHide.lt-md="true" class="navbar-items">
             <a mat-button>{{ 'TITLE.NEW_ARRIVALS' | translate }}</a>
             <a mat-button>{{ 'TITLE.OCCASIONS' | translate }}</a>
             <a mat-button>{{ 'TITLE.S4U_EXCLUSIVE' | translate }}</a>
             <a mat-button>{{ 'TITLE.TRENDING_NOW' | translate }}</a>
             <a mat-button>{{ 'TITLE.READY_TO_SHIP' | translate }}</a>
             <a mat-button>{{ 'TITLE.SUMMER_ESSENTIALS' | translate }}</a>
-            <a mat-button (click)="openDialog()">{{ 'TITLE.LOGIN' | translate }}</a>
+            <a mat-button *ngIf="!(auth.currentUser$ | async)" (click)="openDialog()">{{ 'TITLE.LOGIN' | translate }}
+            </a>
+            <a mat-button *ngIf="(auth.currentUser$ | async)" (click)="onLogout($event)">{{ 'TITLE.LOGOUT' | translate
+                }}
+            </a>
         </div>
     </mat-toolbar>
 
     <mat-sidenav-container fxFlexFill class="example-container">
         <mat-sidenav #sidenav fxLayout="column">
             <div fxLayout="column" fxLayoutAlign="start start">
-                <a mat-button (click)="openDialog()">{{ 'TITLE.LOGIN' | translate }}</a>
+                <a mat-button *ngIf="!(auth.currentUser$ | async)" (click)="openDialog()">{{ 'TITLE.LOGIN' | translate
+                    }}
+                </a>
                 <a mat-button>{{ 'TITLE.NEW_ARRIVALS' | translate }}</a>
                 <a mat-button>{{ 'TITLE.OCCASIONS' | translate }}</a>
                 <a mat-button>{{ 'TITLE.S4U_EXCLUSIVE' | translate }}</a>
                 <a mat-button>{{ 'TITLE.TRENDING_NOW' | translate }}</a>
                 <a mat-button>{{ 'TITLE.READY_TO_SHIP' | translate }}</a>
                 <a mat-button>{{ 'TITLE.SUMMER_ESSENTIALS' | translate }}</a>
+                <a mat-button *ngIf="(auth.currentUser$ | async)" (click)="onLogout($event)">{{ 'TITLE.LOGOUT' |
+                    translate }}
+                </a>
             </div>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill>

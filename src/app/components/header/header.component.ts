@@ -1,8 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { ConstantsClass } from 'src/app/constants/constants';
 import { LoginComponent } from 'src/app/pages/login/login.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +17,11 @@ export class HeaderComponent implements OnInit {
   public screenHeight: any;
   public constant;
 
-  constructor(private translate: TranslateService, public dialog: MatDialog) {
+  constructor(
+    private translate: TranslateService,
+    public dialog: MatDialog,
+    public auth: AuthService
+  ) {
     this.constant = ConstantsClass;
   }
 
@@ -42,5 +48,9 @@ export class HeaderComponent implements OnInit {
           ? '400px'
           : '500px',
     });
+  }
+
+  onLogout($event: Event) {
+    this.auth.logout($event);
   }
 }
