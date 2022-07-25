@@ -16,23 +16,30 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ImageSliderComponent } from './pages/home/image-slider/image-slider.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { SwiperModule } from 'swiper/angular';
 import { NewArrivalsComponent } from './pages/home/new-arrivals/new-arrivals.component';
-import {MatCardModule} from '@angular/material/card';
-import { OccasionsComponent } from './pages/home/occasions/occasions.component'; 
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { OccasionsComponent } from './pages/home/occasions/occasions.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/home/category/category.component';
 import { ReadyToShipComponent } from './pages/home/ready-to-ship/ready-to-ship.component';
 import { GridListComponent } from './components/common/grid-list/grid-list.component';
 import { TrendingComponent } from './pages/home/trending/trending.component';
-import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component'; 
-import {MatDialogModule} from '@angular/material/dialog';
+import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './pages/login/login.component';
 import { MatInputModule } from '@angular/material/input';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { IndividualProductDetailComponent } from './components/individual-product-detail/individual-product-detail.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -52,7 +59,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     TrendingComponent,
     BestSellersComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    IndividualProductDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +89,12 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    HotToastModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
