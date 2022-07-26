@@ -1,0 +1,51 @@
+<div fxLayout="row wrap" class="product-details">
+    <div fxFlex="50" fxFlex.lt-md="100" fxLayout="column" class="images-div">
+        <!-- <img [ngStyle]="{ width : '100%', height : '487px' }" class="main-image" [src]="product[0].images[0]" alt=""> -->
+        <lib-ngx-image-zoom class="main-image" [thumbImage]=product[0].images[0] [magnification]="2"
+            [ngStyle]="{ width : '100%', height : '100%' }" [enableLens]="true" [lensWidth]="250" [lensHeight]="250"
+            [circularLens]="true"></lib-ngx-image-zoom>
+        <div fxLayout="row" class="images" fxLayoutAlign="space-around">
+            <img fxFlex="23" [src]="product[0].images[0]" alt="">
+            <img fxFlex="23" [src]="product[0].images[1]" alt="">
+            <img fxFlex="23" [src]="product[0].images[2]" alt="">
+            <img fxFlex="23" [src]="product[0].images[3]" alt="">
+        </div>
+    </div>
+    <div fxFlex="50" fxFlex.lt-md="100">
+        <mat-card class="example-card">
+            <mat-card-title>{{ product[0].name }}</mat-card-title>
+            <mat-card-subtitle>{{ product[0].price | currency : 'INR' }}</mat-card-subtitle>
+            <small>{{ 'MESSAGE.PRICE_TAX' | translate }}</small>
+            <mat-divider inset></mat-divider>
+            <mat-card-content>
+                <h4> <span class="icon">
+                        <mat-icon>straighten</mat-icon>
+                    </span> <span class="sizeLine">{{ 'LABEL.SIZE_GUIDE' | translate }}</span> </h4>
+                <h4>{{ 'LABEL.SIZE' | translate }} : {{ product[0].size }}</h4>
+                <button (click)="onSize(size)" mat-stroked-button
+                    *ngFor="let size of product[0].variantsParameters[0].possibleValues">{{ size }}</button>
+                <div fxLayout="row" fxLayoutAlign="space-around" class="buttons-div">
+                    <button mat-stroked-button fxFlex="48">{{ 'BUTTON.ADD_TO_CART' | translate }}</button>
+                    <button mat-stroked-button fxFlex="48">{{ 'BUTTON.BUY_NOW' | translate }}</button>
+                </div>
+                <mat-divider inset></mat-divider>
+
+                <div fxLayout="row" fxLayoutAlign="space-between" class="description-heading-div">
+                    <h3>Description</h3>
+                    <h3>
+                        <mat-icon *ngIf="expand === 'less'" (click)="expand = 'more'">expand_less</mat-icon>
+                        <mat-icon *ngIf="expand === 'more'" (click)="expand = 'less'">expand_more</mat-icon>
+                    </h3>
+                </div>
+                <mat-divider *ngIf="expand === 'less'" inset></mat-divider>
+                <div *ngFor="let attribute of product[0].attributes" fxLayout="row" fxLayoutAlign="start"
+                    class="description-div">
+                    <ng-container *ngIf="attribute.display && expand === 'less'">
+                        <h3 fxFlex="50"> <strong> {{ attribute.key }}</strong></h3>
+                        <h3 fxFlex="50">{{ attribute.value }}</h3>
+                    </ng-container>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
