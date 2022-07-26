@@ -1,5 +1,8 @@
 <swiper [config]="constant.config" class="mySwiper">
-    <ng-template swiperSlide *ngFor="let img of images"><img
-            [ngStyle]="{ 'width' : constant.imgWidth, 'height' : constant.imgHeight }" [src]="img.image" alt="">
+    <ng-template swiperSlide *ngFor="let product of productService.products"><img
+            [ngStyle]="{ 'width' : constant.imgWidth, 'height' : constant.imgHeight }" 
+            [src]="product.image" 
+            (click)="onClick(product)"
+            alt="">
     </ng-template>
 </swiper>
