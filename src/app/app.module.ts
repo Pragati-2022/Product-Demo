@@ -40,6 +40,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import { IndividualProductDetailComponent } from './components/individual-product-detail/individual-product-detail.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -61,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     LoginComponent,
     SignUpComponent,
     IndividualProductDetailComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +98,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AngularFireAuthModule,
     AngularFireStorageModule,
     HotToastModule.forRoot(),
+    NgxImageZoomModule
   ],
   providers: [],
   bootstrap: [AppComponent],
