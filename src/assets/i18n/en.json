@@ -3,7 +3,9 @@
     "VIEW_ALL": "VIEW ALL",
     "SHOP_NOW": "SHOP NOW",
     "LOGIN": "LOGIN",
-    "SIGNUP": "SIGNUP"
+    "SIGNUP": "SIGNUP",
+    "ADD_TO_CART" : "Add To Cart",
+    "BUY_NOW" : "Buy Now"
   },
   "TITLE": {
     "AINA": "AINA",
@@ -34,12 +36,15 @@
   "LABEL": {
     "EMAIL": "Email",
     "PASSWORD": "Password",
-    "CONFIRM_PASSWORD": "Confirm Password"
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "SIZE" : "Size",
+    "SIZE_GUIDE" : "Size Guide"
   },
   "MESSAGE": {
     "REQUIRED": "is required !",
     "EMAIL": "is invalid !",
-    "MATCH_PASSWORD": "is not match!"
+    "MATCH_PASSWORD": "is not match!",
+    "PRICE_TAX" : "Price inclusive of all taxes."
   },
 
   "FOOTER_LABEL": {
